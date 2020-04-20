@@ -19,7 +19,11 @@ Uppgiften lämnas in i tid!
 Krav för väl godkänt:
 
 Alla punkter för godkänt är uppfyllda
+
 All data skall vara sparad i en JSON-fil istället för i serverfilen
+
 Datan i JSON-filen skall uppdateras då något läggs till, uppdateras eller tas bort
+
 Ett simpelt klient-gränssnitt skall finnas för att anropa API:ets olika endpoints, samt visa upp resultatet vid GET anrop
+
 Ytterligare en GET endpoint skall läggas till där det går att hämta ett specifikt objekt
