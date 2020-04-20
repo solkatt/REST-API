@@ -1,5 +1,3 @@
-const data = require('./data.json')
-
 const express = require('express')
 const app = express()
 
@@ -21,7 +19,7 @@ const products = [
 		id: 1,
 		name: 'Roland JD-800',
 		price: 14999,
-		condition: "like new"
+		condition: "excellent"
 
 	},
 	{
@@ -34,13 +32,13 @@ const products = [
 		id: 3,
 		name: 'Korg Wavestation',
 		price: 12999,
-		condition: "good"
+		condition: "used"
 	},
 	{
 		id: 4,
 		name: 'Yamaha DX7',
 		price: 9499,
-		condition: "good"
+		condition: "excellent"
 	},
 	{
 		id: 5,
@@ -52,13 +50,13 @@ const products = [
 		id: 6,
 		name: 'PPG Wave 2.2/3',
 		price: 1337,
-		condition: "good"
+		condition: "used"
 	},
 	{
 		id: 7,
 		name: 'Sequential Circuits Prophet-5',
 		price: 5359,
-		condition: "good"
+		condition: "poor"
 	},
 	{
 		id: 8,
@@ -70,18 +68,14 @@ const products = [
 		id: 9,
 		name: 'Moog Minimoog',
 		price: 13299,
-		condition: "good"
+		condition: "excellent"
 	},
 ]
-app.use(express.static('public'))
 
-//This is for Images Folder on path Images
-app.use('/images', express.static('images'))
+
 
 app.get('/', (req, res) => {
-	res.send('Hello World')
-	// Get Data first
-	// res.json(data)
+	res.send('<h2>Good Day</h2> <h3>Use the .rest client to perform CRUD operations</h3>')
 })
 
 app.get('/api/products', (req, res) => {
@@ -150,46 +144,6 @@ app.delete('/api/products/:id', (req, res) => {
 	res.send(product)
 })
 
-/*
-// Get single dataobject
-app.get(
-	'/item/:id',
-	(req, res, next) => {
-		console.log(req.params.id)
-		let user = Number(req.params.id)
-		console.log(user)
-		console.log(data[user])
-		res.send(data[user])
-		next()
-	},
-	(req, res) => {
-		console.log('Did you get the right data?')
-	}
-)
-
-app.post('/item', (req, res) => {
-	res.send(`a POST request with /newItem route on port ${port}`)
-})
-
-app.route('/item')
-	.get((req, res) => {
-		// res.download('images/forest.jpg')
-		// res.redirect('http://www.linkedin.com')
-		// res.end()
-		res.send(`a GET request with /item route on port ${port}`)
-	})
-	.put((req, res) => {
-		res.send(`a PUT request with /item route on port ${port}`)
-	})
-	.delete((req, res) => {
-		res.send(`a DELETE request with /item route on port ${port}`)
-	})
-
-
-
-
-
-	*/
 app.listen(port, () => {
 	console.log(`Server is running on port: http://localhost:${port}`)
 })

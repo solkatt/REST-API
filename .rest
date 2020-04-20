@@ -1,37 +1,42 @@
 
 
 // Read all Objects
-GET http://localhost:3000/api/courses/
+GET http://localhost:3000/api/products/
 
 ###
 
-// Read Specific Object
-GET http://localhost:3000/api/courses/3
+// Read Specific Object  (id:3)
+GET http://localhost:3000/api/products/3
 
 ###
 
 //Create New Object
-POST http://localhost:3000/api/courses
+POST http://localhost:3000/api/products
 Content-Type: application/json
 
 {
-    "name": "Örjan"
+    "name": "Prophet-5",
+    "price": 40000,
+    "condition": "excellent"
 }
 
 
 ###
 
 //Update Existing Object
-PUT http://localhost:3000/api/courses/3
+PUT http://localhost:3000/api/products/3
 Content-Type: application/json
 
 {
-    "name": "Bengt"
+    "name": "Roland TR-808",
+    "price": 14999,
+    "condition": "poor"
 }
 
 ###
 
-DELETE http://localhost:3000/api/courses/2
+//Delete Specific Object (w/ id:5)
+DELETE http://localhost:3000/api/products/5
 
 ###
 
